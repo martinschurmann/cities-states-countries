@@ -1,0 +1,25 @@
+{
+  "name": "cities-states-countries",
+  "version": "1.0.0",
+  "description": "JSON formatted data containing the world's countries, states/provinces, and cities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/martinschurmann/cities-states-countries.git"
+  },
+  "keywords": [
+    "country",
+    "city",
+    "state",
+    "json"
+  ],
+  "author": "martinschurmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/martinschurmann/cities-states-countries/issues"
+  },
+  "homepage": "https://github.com/martinschurmann/cities-states-countries#readme"
+}
