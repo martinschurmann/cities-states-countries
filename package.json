@@ -1,6 +1,6 @@
 {
   "name": "cities-states-countries",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "JSON formatted data containing the world's countries, states/provinces, and cities.",
   "main": "index.js",
   "scripts": {
