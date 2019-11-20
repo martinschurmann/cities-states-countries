@@ -1,26 +1,38 @@
-const countries = require('./countries');
+const countries = require('./countries.json');
 
 function getCountries() {
-    return countries.map(c => c.name);
+    try {
+        return countries.map(c => c.name);
+    } catch (error) {
+        return [];
+    }
 }
 
 function getStates(country) {
-    let foundCountry = countries.find(c=>c.name === country);    
-    if(!foundCountry || !foundCountry.states)
+    try {
+        let foundCountry = countries.find(c => `${c.name}`.toLowerCase() === `${country}`.toLowerCase());
+        if (!foundCountry || !foundCountry.states)
+            return [];
+        return Object.keys(foundCountry.states)
+    } catch (error) {
         return [];
-    return Object.keys(foundCountry.states)
+    }
 }
 
 function getCities(country, state) {
-    let foundCountry = countries.find(c=>c.name === country);    
-    if(!foundCountry || !foundCountry.states)
+    try {
+        let foundCountry = countries.find(c => `${c.name}`.toLowerCase() === `${country}`.toLowerCase());
+        if (!foundCountry || !foundCountry.states)
+            return [];
+        if (state)
+            return foundCountry.states[state];
+        let allCities = [];
+        for (let state of Object.keys(foundCountry.states))
+            allCities = allCities.concat(foundCountry.states[state])
+        return allCities;
+    } catch (error) {
         return [];
-    if(state)
-        return foundCountry.states[state];
-    let allCities = [];
-    for(let state of Object.keys(foundCountry.states))
-        allCities = allCities.concat(foundCountry.states[state])
-    return allCities;
+    }
 }
 
 module.exports = {
