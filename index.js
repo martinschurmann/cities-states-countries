@@ -2,7 +2,12 @@ const countries = require('./countries.json');
 
 function getCountries() {
     try {
-        return countries.map(c => c.name);
+        return countries.map(c => {
+            return {
+                name: c.name,
+                iso2: c.iso2
+            };
+        });
     } catch (error) {
         return [];
     }
